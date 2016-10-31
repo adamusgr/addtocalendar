@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>Add to Calendar Button</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous" rel="stylesheet">
+	</head>
+<body>
+
+	<div class="container m-t-3">
+		<div class="row">
+			<div class="col-lg-8">
+			  <h1 class="display-4">Add to Calendar Button</h1>
+			  <p class="lead">This example is using twitter bootstrap, you can have any library/css to build the dropdown component.</p>
+
+				<div class="alert alert-warning" role="alert">
+					<strong>Note: </strong> This code uses Vanilla JS methods and doesn't have any Polyfills for cross browser compatibility. Methods that would require a Polyfill are <code>document.querySelectorAll</code>, <code>addEventListener</code>, <code>addEventListener</code>.
+				</div>
+
+				<h2 class="display-4">A few examples</h2>
+				<div class="row">
+					<div class="col-lg-6">
+						Event without an End Date
+						<div class="dropdown" data-addtocal data-addtocal-title="Event without an End Date" data-addtocal-startdate="10/10/2016" data-addtocal-starttime="17:05" data-addtocal-endtime="18:00" data-addtocal-desc="A birthday party for foo bar!" data-addtocal-location="Stevens Creek Blvd, Cupertino, CA">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add to Calendar</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">iCalendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="google">Google Calendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">Outlook</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="outlooklive">Outlook Live</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="yahoo">Yahoo! Calendar</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						Event with ISO date string
+						<div class="dropdown" data-addtocal data-addtocal-title="Event with ISO date string" data-addtocal-startdate="Sat Oct 01 2016 12:00:00 GMT-0700 (PDT)" data-addtocal-enddate="Sat Oct 01 2016 13:00:00 GMT-0700 (PDT)" data-addtocal-desc="A birthday party for foo bar!" data-addtocal-starttime="7:00" data-addtocal-endtime="9:20" data-addtocal-location="Stevens Creek Blvd, Cupertino, CA">
+							<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add to Calendar</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">iCalendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="google">Google Calendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">Outlook</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="outlooklive">Outlook Live</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="yahoo">Yahoo! Calendar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row m-t-2">
+					<div class="col-lg-6">
+						All day event with just Start Date
+						<div class="dropdown" data-addtocal data-addtocal-title="All day event with just Start Date" data-addtocal-startdate="3.4.2016" data-addtocal-desc="A birthday party for foo bar!" data-addtocal-location="Cupertino, CA">
+							<button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add to Calendar</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">iCalendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="google">Google Calendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">Outlook</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="outlooklive">Outlook Live</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="yahoo">Yahoo! Calendar</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6">
+						All day event with DD-MM-YYYY format
+						<div class="dropdown" data-addtocal data-addtocal-title="All day event with DD-MM-YY format" data-addtocal-startdate="22-04-2017" data-addtocal-desc="A birthday party for foo bar!" data-addtocal-location="Stevens Creek Blvd, Cupertino, CA">
+							<button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add to Calendar</button>
+							<div class="dropdown-menu">
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">iCalendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="google">Google Calendar</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="ics">Outlook</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="outlooklive">Outlook Live</a>
+								<a href="#" class="dropdown-item" data-addtocal-type="yahoo">Yahoo! Calendar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+  <script src="addToCalendarNative.js"></script>
+</body>
+</html>
