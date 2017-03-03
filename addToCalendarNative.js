@@ -266,9 +266,25 @@
           if (calendar && typeof calendarType[calendar] === 'function') {
             var url = calendarType[calendar](eventData);
             button.setAttribute('href', encodeURL(url));
+
+            if (calendar === 'ics') {
+
+              if (isDownloadAttrSupported()) {
+                button.setAttribute('download', 'event.ics');
+              } else {
+                button.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  window.open('calendar.php?data=' + button.href.replace('data:text/calendar;charset=utf8,', ''), '_blank');
+                });
+              }
+            }
           }
         });
       });
+    }
+
+    function isDownloadAttrSupported () {
+      return 'download' in document.createElement('a');
     }
 
     /**
