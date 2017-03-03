@@ -47,6 +47,8 @@
       'desc'      : 'data-addtocal-desc',
       'location'  : 'data-addtocal-location',
       'url'       : 'data-addtocal-url',
+      'categories': 'data-addtocal-categories',
+      'organizer' : 'data-addtocal-organizer',
       'linkType'  : 'data-addtocal-type'
     };
 
@@ -80,13 +82,23 @@
       },
 
       ics : function (eventData) {
-        return 'data:text/calendar;charset=utf8;,BEGIN:VCALENDAR\nMETHOD:PUBLISH\nVERSION:2.0\nBEGIN:VEVENT\nSEQUENCE:0\n'
-              + 'DTSTART:'        + eventData.startDate
+        return 'data:text/calendar;charset=utf8,'
+              + 'BEGIN:VCALENDAR'
+              + '\nMETHOD:PUBLISH'
+              + '\nVERSION:2.0'
+              + '\nBEGIN:VEVENT'
+              + '\nSEQUENCE:0'
+              + '\nDTSTART:'      + eventData.startDate
               + '\nDTEND:'        + eventData.endDate
               + '\nSUMMARY:'      + eventData.title
               + '\nLOCATION:'     + eventData.location
               + '\nDESCRIPTION:'  + eventData.description
-              + '\nCLASS:PUBLIC\nEND:VEVENT\nEND:VCALENDAR';
+              + '\nURL:'          + (eventData.url || document.location)
+              + '\nCATEGORIES:'   + (eventData.categories || '')
+              + '\nORGANIZER:'    + (eventData.organizer || '')
+              + '\nCLASS:PUBLIC'
+              + '\nEND:VEVENT'
+              + '\nEND:VCALENDAR';
       }
     };
 
@@ -233,6 +245,9 @@
           , endTime     : cal.getAttribute(selectors.endTime)
           , location    : cal.getAttribute(selectors.location)
           , description : cal.getAttribute(selectors.desc)
+          , url         : cal.getAttribute(selectors.url)
+          , categories  : cal.getAttribute(selectors.categories)
+          , organizer   : cal.getAttribute(selectors.organizer)
         };
 
         var eventDateAndTime = getEventDateAndTime(eventData);
